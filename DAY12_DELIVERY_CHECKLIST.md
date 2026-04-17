@@ -188,7 +188,7 @@ done
 **Submit your GitHub repository URL:**
 
 ```
-https://github.com/your-username/day12-agent-deployment
+https://github.com/trungnguyen278/day12-agent-deployment.git
 ```
 
 **Deadline:** 17/4/2026
