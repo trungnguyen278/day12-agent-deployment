@@ -32,8 +32,7 @@ from app.auth import verify_api_key
 from app.rate_limiter import check_rate_limit
 from app.cost_guard import check_and_record_cost, get_daily_cost
 
-# Mock LLM (thay bằng OpenAI/Anthropic khi có API key)
-from utils.mock_llm import ask as llm_ask
+from utils.real_llm import ask as llm_ask
 
 # ─────────────────────────────────────────────────────────
 # Logging — JSON structured
@@ -184,8 +183,8 @@ async def ask_agent(
 @app.get("/health", tags=["Operations"])
 def health():
     """Liveness probe. Platform restarts container if this fails."""
-    status = "ok"
-    checks = {"llm": "mock" if not settings.openai_api_key else "openai"}
+    status = "ok" if settings.openai_api_key else "degraded"
+    checks = {"llm": "openai" if settings.openai_api_key else "missing_key"}
     return {
         "status": status,
         "version": settings.app_version,

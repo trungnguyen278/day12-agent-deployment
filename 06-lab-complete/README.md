@@ -72,12 +72,11 @@ npm i -g @railway/cli
 railway login
 railway init
 
-# Env vars BẮT BUỘC (production mode sẽ fail nếu thiếu 2 key đầu — xem app/config.py)
+# Env vars BẮT BUỘC (production mode fail startup nếu thiếu 3 key này — xem app/config.py)
 railway variables set AGENT_API_KEY=my-secret-api-key-2024
 railway variables set JWT_SECRET=my-jwt-secret-2026
+railway variables set OPENAI_API_KEY=sk-...your-openai-key...
 railway variables set ENVIRONMENT=production
-# Tùy chọn — nếu muốn dùng OpenAI thật thay mock LLM
-# railway variables set OPENAI_API_KEY=sk-...
 
 railway up
 
