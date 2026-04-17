@@ -156,7 +156,7 @@ day12-agent-deployment/
 ├── 06-lab-complete/                # Lab 12: Production-ready agent
 │   └── (full project kết hợp tất cả)
 │
-└── utils/                          # Mock LLM dùng chung (không cần API key)
+└── utils/                          # Mock LLM dùng cho lesson 01-05 (demo offline)
 ```
 
 ---
@@ -188,7 +188,10 @@ python 3.11+
 docker & docker compose
 ```
 
-Mỗi folder có `requirements.txt` riêng. Không cần API key thật — các ví dụ dùng **mock LLM** để chạy offline.
+Mỗi folder có `requirements.txt` riêng.
+
+- **Lesson 01–05** (folder `01-` đến `05-`): dùng mock LLM — học concept deployment không cần API key.
+- **Lab 06 (`06-lab-complete/`)** — bài nộp production: gọi **OpenAI API thật** (`gpt-4o-mini`), yêu cầu `OPENAI_API_KEY`.
 
 ---
 

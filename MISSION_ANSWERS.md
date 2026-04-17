@@ -161,8 +161,9 @@ railway domain
 curl https://lab12-agent-production.up.railway.app/health
 # Expected: {"status":"ok","uptime_seconds":...,"platform":"Railway",...}
 
-# Ask endpoint
+# Ask endpoint (cần X-API-Key)
 curl https://lab12-agent-production.up.railway.app/ask -X POST \
+  -H "X-API-Key: my-secret-api-key-2024" \
   -H "Content-Type: application/json" \
   -d '{"question": "What is cloud deployment?"}'
 ```

@@ -20,7 +20,7 @@ curl -X POST https://lab12-agent-production.up.railway.app/ask \
   -H "X-API-Key: my-secret-api-key-2024" \
   -H "Content-Type: application/json" \
   -d '{"question": "Hello, what is Docker?"}'
-# Expected: {"question":"...","answer":"...","model":"gpt-4o-mini","timestamp":"..."}
+# Expected: {"question":"...","answer":"<câu trả lời thật từ OpenAI gpt-4o-mini>","model":"gpt-4o-mini","timestamp":"..."}
 ```
 
 ### Rate Limit Test
@@ -47,6 +47,9 @@ curl -X POST https://lab12-agent-production.up.railway.app/ask \
 - PORT
 - ENVIRONMENT=production
 - AGENT_API_KEY
+- JWT_SECRET
+- OPENAI_API_KEY (required — agent gọi OpenAI gpt-4o-mini)
+- LLM_MODEL=gpt-4o-mini
 - REDIS_URL (if using Redis add-on)
 - DAILY_BUDGET_USD
 - RATE_LIMIT_PER_MINUTE
